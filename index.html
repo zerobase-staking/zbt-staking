@@ -17,16 +17,16 @@ function proceedToWallet(){
 
 </script>
 <meta charset="UTF-8"/>
-<meta name="theme-color" content="#0D0D26"/>
+<meta name="theme-color" content="#02161A"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,shrink-to-fit=no"/>
 <title>ZEROBASE — Staking Hub</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --p:#00D4E8;--p2:#00E5FF;--p3:#7AF0FF;
-  --grad:linear-gradient(135deg,#00D4E8 0%,#00E5FF 50%,#B8FBFF 100%);
+  --p:#00E8FF;--p2:#33F0FF;--p3:#99F8FF;
+  --grad:linear-gradient(135deg,#00C8E8 0%,#00E8FF 40%,#66F4FF 100%);
   --bg:#02161A;--card:#062228;--card2:#0A2E36;
-  --b1:rgba(0,212,232,0.28);--b2:rgba(0,229,255,0.45);
+  --b1:rgba(0,232,255,0.38);--b2:rgba(51,240,255,0.55);
   --t1:#FFFFFF;--t2:#E6FBFF;--t3:#A8E4EE;
   --font:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
   --mono:ui-monospace,'SF Mono','Courier New',monospace;
@@ -34,40 +34,40 @@ function proceedToWallet(){
 html{background:#02161A;}body{background:#02161A;color:var(--t1);font-family:var(--font);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-size:15px;}
 input,select,textarea{font-size:16px!important;-webkit-text-size-adjust:100%!important;}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 70% 50% at 8% 0%,rgba(0,212,232,0.38),transparent 58%),
-             radial-gradient(ellipse 60% 48% at 95% 100%,rgba(0,229,255,0.22),transparent 58%),
+  background:radial-gradient(ellipse 70% 50% at 8% 0%,rgba(0,232,255,0.45),transparent 58%),
+             radial-gradient(ellipse 60% 48% at 95% 100%,rgba(51,240,255,0.28),transparent 58%),
              radial-gradient(ellipse 40% 32% at 48% 38%,rgba(0,0,0,0.35),transparent 62%);}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(2,22,26,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);gap:10px;}
 .nmid{display:flex;align-items:center;justify-content:center;flex:1;}
 .nbrand{display:flex;align-items:center;gap:9px;}
-.nlogo{width:34px;height:34px;border-radius:50%;overflow:hidden;border:2px solid #00D4E8;box-shadow:0 0 14px rgba(0,212,232,0.55);}
+.nlogo{width:34px;height:34px;border-radius:50%;overflow:hidden;border:2px solid #00E8FF;box-shadow:0 0 16px rgba(0,232,255,0.70);}
 .nlogo img{width:100%;height:100%;object-fit:cover;}
-.nname{font-size:15px;font-weight:900;letter-spacing:-0.01em;color:#00D4E8;text-shadow:0 0 12px rgba(0,212,232,0.50);}
+.nname{font-size:15px;font-weight:900;letter-spacing:-0.01em;color:#00E8FF;text-shadow:0 0 14px rgba(0,232,255,0.60);}
 .nname em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nright{display:flex;align-items:center;gap:8px;}
 .nbtn{height:33px;padding:0 14px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;border:none;font-family:var(--font);transition:all .18s;}
-.nbtn.g{background:rgba(123,82,245,0.12);border:1px solid var(--b2);color:#fff;}
-.nbtn.s{background:var(--grad);color:#fff;box-shadow:0 0 18px rgba(123,82,245,0.4);}
+.nbtn.g{background:rgba(0,232,255,0.12);border:1px solid var(--b2);color:#fff;}
+.nbtn.s{background:var(--grad);color:#fff;box-shadow:0 0 18px rgba(0,232,255,0.4);}
 .nbtn.s:hover{filter:brightness(1.1);transform:translateY(-1px);}
-.nbtn.connect{display:flex;align-items:center;gap:7px;height:33px;padding:0 14px;border-radius:100px;background:linear-gradient(135deg,#7B52F5 0%,#9B6BFF 100%);color:#fff;box-shadow:0 0 16px rgba(123,82,245,0.35);}
+.nbtn.connect{display:flex;align-items:center;gap:7px;height:33px;padding:0 14px;border-radius:100px;background:linear-gradient(135deg,#00E8FF 0%,#33F0FF 100%);color:#fff;box-shadow:0 0 16px rgba(0,232,255,0.35);}
 .nbtn.connect:hover{filter:brightness(1.08);transform:translateY(-1px);}
 .nbtn.connect svg{width:15px;height:15px;flex-shrink:0;}
-.nbtn.connected{display:flex;align-items:center;gap:7px;height:33px;padding:0 12px 0 10px;border-radius:100px;background:rgba(123,82,245,0.18);border:1px solid var(--b2);color:#fff;box-shadow:none;}
+.nbtn.connected{display:flex;align-items:center;gap:7px;height:33px;padding:0 12px 0 10px;border-radius:100px;background:rgba(0,232,255,0.18);border:1px solid var(--b2);color:#fff;box-shadow:none;}
 .nbtn.connected .cdot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;flex-shrink:0;}
 @media(max-width:860px){.nbtn.connect span.clbl{display:none;}.nbtn.connect{padding:0 10px;}}
-.nicon{width:33px;height:33px;border-radius:8px;background:rgba(123,82,245,0.08);border:1px solid var(--b1);color:#E8ECFF;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nicon{width:33px;height:33px;border-radius:8px;background:rgba(0,232,255,0.08);border:1px solid var(--b1);color:#E8ECFF;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
 /* MAIN */
 main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-bottom:60px;}
 /* HERO */
 .hero{padding:40px 22px 28px;border-bottom:1px solid var(--b1);}
-.vpill{display:inline-flex;align-items:center;gap:8px;padding:5px 13px 5px 7px;border-radius:100px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);margin-bottom:16px;}
+.vpill{display:inline-flex;align-items:center;gap:8px;padding:5px 13px 5px 7px;border-radius:100px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);margin-bottom:16px;}
 .vpill span{font-size:11px;font-weight:600;color:var(--t2);}
 .hero h1{font-size:40px;font-weight:900;letter-spacing:-0.04em;line-height:1.05;color:#fff;margin-bottom:11px;}
 .hero h1 .g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{font-size:14px;color:var(--t2);line-height:1.65;max-width:480px;margin-bottom:22px;}
 .trust-row{display:flex;flex-wrap:wrap;gap:6px;}
-.tchip{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:7px;background:rgba(123,82,245,0.06);border:1px solid var(--b1);font-size:11px;font-weight:600;color:var(--t2);}
+.tchip{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:7px;background:rgba(0,232,255,0.06);border:1px solid var(--b1);font-size:11px;font-weight:600;color:var(--t2);}
 .tdot{width:5px;height:5px;border-radius:50%;background:var(--grad);flex-shrink:0;}
 /* STATS */
 .sbar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--b1);}
@@ -93,7 +93,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .apr-bar{height:3px;background:var(--b1);border-radius:2px;overflow:hidden;margin-bottom:10px;}
 .apr-bar-fill{height:100%;width:0%;background:var(--grad);border-radius:2px;transition:width 1.8s ease;}
 .apr-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
-.am-cell{text-align:center;padding:7px;background:rgba(123,82,245,0.06);border-radius:7px;border:1px solid var(--b1);}
+.am-cell{text-align:center;padding:7px;background:rgba(0,232,255,0.06);border-radius:7px;border:1px solid var(--b1);}
 .am-val{font-family:var(--mono);font-size:13px;font-weight:800;color:#fff;}
 .am-val.g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .am-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t2);margin-top:2px;}
@@ -105,7 +105,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 /* FORM */
 .flbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-bottom:5px;display:block;}
 .fi{display:flex;align-items:center;background:var(--card2);border:1px solid var(--b1);border-radius:9px;padding:0 12px;margin-bottom:11px;transition:border-color .18s;}
-.fi:focus-within{border-color:var(--p2);box-shadow:0 0 0 3px rgba(123,82,245,0.1);}
+.fi:focus-within{border-color:var(--p2);box-shadow:0 0 0 3px rgba(0,232,255,0.1);}
 .fi input,.fi select{flex:1;background:none;border:none;outline:none;padding:10px 0;color:#fff;font-family:var(--font);font-weight:600;}
 .fi select option{background:var(--card);}
 .ftok{font-size:9.5px;font-weight:800;color:var(--p3);background:rgba(30,184,208,0.08);padding:3px 7px;border-radius:5px;border:1px solid rgba(30,184,208,0.2);}
@@ -120,20 +120,20 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 /* VAL */
 .valrow{display:flex;align-items:center;gap:9px;background:var(--card2);border:1px solid var(--b1);border-radius:9px;padding:10px 12px;cursor:pointer;transition:border-color .18s;margin-bottom:12px;}
 .valrow:hover{border-color:var(--b2);}
-.valav{width:30px;height:30px;border-radius:7px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 0 10px rgba(123,82,245,0.35);}
+.valav{width:30px;height:30px;border-radius:7px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 0 10px rgba(0,232,255,0.35);}
 .valn{font-size:10px;font-weight:700;color:#fff;}
 .valm{font-size:9px;color:var(--t3);margin-top:1px;}
 .vala{font-family:var(--mono);font-size:11px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:auto;}
 .vallive{font-size:8.5px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(30,184,208,0.08);color:var(--p3);border:1px solid rgba(30,184,208,0.2);margin-left:6px;}
 /* BTNS */
-.btnmain{width:100%;height:42px;border-radius:9px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;border:none;cursor:pointer;font-family:var(--font);box-shadow:0 0 20px rgba(123,82,245,0.35);transition:all .2s;position:relative;overflow:hidden;}
-.btnmain:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 0 28px rgba(123,82,245,0.5);}
-.btnout{width:100%;height:38px;border-radius:9px;background:rgba(123,82,245,0.06);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);margin-top:7px;transition:all .18s;}
-.btnout:hover{background:rgba(123,82,245,0.12);color:#fff;}
+.btnmain{width:100%;height:42px;border-radius:9px;background:var(--grad);color:#fff;font-size:11px;font-weight:800;border:none;cursor:pointer;font-family:var(--font);box-shadow:0 0 20px rgba(0,232,255,0.35);transition:all .2s;position:relative;overflow:hidden;}
+.btnmain:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 0 28px rgba(0,232,255,0.5);}
+.btnout{width:100%;height:38px;border-radius:9px;background:rgba(0,232,255,0.06);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);margin-top:7px;transition:all .18s;}
+.btnout:hover{background:rgba(0,232,255,0.12);color:#fff;}
 .togrow{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--b1);margin-top:11px;}
 .tog{position:relative;width:32px;height:18px;flex-shrink:0;}
 .tog input{opacity:0;width:0;height:0;}
-.tsl{position:absolute;inset:0;background:rgba(123,82,245,0.15);border-radius:20px;cursor:pointer;transition:.3s;}
+.tsl{position:absolute;inset:0;background:rgba(0,232,255,0.15);border-radius:20px;cursor:pointer;transition:.3s;}
 .tsl:before{content:'';position:absolute;width:13px;height:13px;left:2.5px;top:2.5px;background:var(--t3);border-radius:50%;transition:.3s;}
 .tog input:checked+.tsl{background:var(--grad);}
 .tog input:checked+.tsl:before{transform:translateX(14px);background:#fff;}
@@ -169,7 +169,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .en{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;width:50px;}
 .edot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;border:1.5px solid var(--b2);color:var(--t3);background:var(--card2);}
 .edot.done{background:rgba(30,184,208,0.1);border-color:rgba(30,184,208,0.3);color:var(--p3);}
-.edot.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 12px rgba(123,82,245,0.45);}
+.edot.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 12px rgba(0,232,255,0.45);}
 .elbl{font-size:8.5px;font-weight:600;color:var(--t3);text-align:center;}
 .elbl.done{color:var(--p3);}
 .elbl.active{color:#fff;}
@@ -209,15 +209,15 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 /* MODAL */
 .ov{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
 .ov.open{display:flex;}
-.modal{background:var(--card);border:1px solid var(--b2);border-radius:18px;width:100%;max-width:420px;margin:14px;overflow:hidden;box-shadow:0 0 40px rgba(123,82,245,0.15),0 24px 80px rgba(0,0,0,0.7);}
+.modal{background:var(--card);border:1px solid var(--b2);border-radius:18px;width:100%;max-width:420px;margin:14px;overflow:hidden;box-shadow:0 0 40px rgba(0,232,255,0.15),0 24px 80px rgba(0,0,0,0.7);}
 .mtop{height:2px;background:var(--grad);}
 .mbody{padding:18px;}
 .mhd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .mtitle{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#fff;}
-.mclose{width:26px;height:26px;border-radius:7px;border:1px solid var(--b2);background:rgba(123,82,245,0.08);color:var(--t2);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.mclose{width:26px;height:26px;border-radius:7px;border:1px solid var(--b2);background:rgba(0,232,255,0.08);color:var(--t2);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;}
 .srow{display:flex;align-items:center;margin-bottom:18px;}
 .sdot{width:19px;height:19px;border-radius:50%;background:var(--card2);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;color:var(--t3);flex-shrink:0;transition:all .3s;}
-.sdot.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 10px rgba(123,82,245,0.4);}
+.sdot.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 10px rgba(0,232,255,0.4);}
 .sdot.done{background:rgba(30,184,208,0.1);border-color:rgba(30,184,208,0.3);color:var(--p3);}
 .sline{flex:1;height:1px;background:var(--b1);margin:0 4px;transition:background .3s;}
 .sline.done{background:linear-gradient(90deg,var(--p3),var(--p2));}
@@ -232,7 +232,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
 .waddr{flex:1;font-family:var(--mono);font-size:8.5px;color:#fff;font-weight:600;}
 .wnet{font-size:7.5px;font-weight:700;text-transform:uppercase;color:var(--t3);background:var(--card);padding:2px 6px;border-radius:4px;flex-shrink:0;}
-.mbtn{width:100%;height:40px;border-radius:9px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;border:none;cursor:pointer;font-family:var(--font);box-shadow:0 0 16px rgba(123,82,245,0.3);transition:all .2s;}
+.mbtn{width:100%;height:40px;border-radius:9px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:800;border:none;cursor:pointer;font-family:var(--font);box-shadow:0 0 16px rgba(0,232,255,0.3);transition:all .2s;}
 .mbtn:hover{filter:brightness(1.08);transform:translateY(-1px);}
 .mbtn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
 .minp{display:flex;align-items:center;background:var(--card2);border:1px solid var(--b1);border-radius:8px;padding:0 11px;}
@@ -249,7 +249,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .albl{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:7px;display:block;}
 .aval{font-family:var(--mono);font-size:11px;color:#fff;word-break:break-all;line-height:1.8;background:var(--bg);border-radius:6px;padding:7px 9px;border:1px solid var(--b1);margin-bottom:8px;}
 .copybtn{width:100%;height:34px;border-radius:7px;background:var(--grad);border:none;color:#fff;font-size:9.5px;font-weight:800;cursor:pointer;font-family:var(--font);}
-.succicon{width:48px;height:48px;border-radius:50%;background:rgba(123,82,245,0.1);border:1px solid rgba(123,82,245,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 11px;box-shadow:0 0 18px rgba(123,82,245,0.2);}
+.succicon{width:48px;height:48px;border-radius:50%;background:rgba(0,232,255,0.1);border:1px solid rgba(0,232,255,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 11px;box-shadow:0 0 18px rgba(0,232,255,0.2);}
 .succtitle{font-size:12px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;}
 .succsub{font-size:9.5px;color:var(--t2);}
 /* VP / TX */
@@ -280,13 +280,13 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .shov{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1200;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);}
 .shov.open{display:flex;}
 /* TOAST */
-#toast{display:none;position:fixed;bottom:22px;right:18px;z-index:9999;width:282px;background:var(--card);border:1px solid var(--b2);border-radius:12px;overflow:hidden;box-shadow:0 0 20px rgba(123,82,245,0.15),0 8px 30px rgba(0,0,0,0.5);}
+#toast{display:none;position:fixed;bottom:22px;right:18px;z-index:9999;width:282px;background:var(--card);border:1px solid var(--b2);border-radius:12px;overflow:hidden;box-shadow:0 0 20px rgba(0,232,255,0.15),0 8px 30px rgba(0,0,0,0.5);}
 #tbar{height:2px;background:var(--grad);animation:tprog 4.5s linear forwards;}
 #tbody{padding:11px 13px;display:flex;align-items:center;gap:9px;}
 @keyframes tprog{from{width:100%;}to{width:0;}}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:rgba(123,82,245,0.25);border-radius:2px;}
+::-webkit-scrollbar-thumb{background:rgba(0,232,255,0.25);border-radius:2px;}
 @media(max-width:860px){.pgrid{grid-template-columns:1fr 1fr;}.fgrid{grid-template-columns:1fr;}}
 
 /* CUMULATIVE EARNINGS */
@@ -296,7 +296,7 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .earnings-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);}
 .earnings-since{font-size:8.5px;color:var(--t3);font-family:var(--mono);}
 .earnings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-.eg-cell{background:rgba(123,82,245,0.06);border:1px solid var(--b1);border-radius:9px;padding:10px;}
+.eg-cell{background:rgba(0,232,255,0.06);border:1px solid var(--b1);border-radius:9px;padding:10px;}
 .eg-lbl{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-bottom:4px;}
 .eg-val{font-family:var(--mono);font-size:14px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .eg-val.white{background:none;-webkit-text-fill-color:#fff;color:#fff;}
@@ -304,13 +304,13 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 /* RECEIPT MODAL */
 .rcov{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1300;align-items:center;justify-content:center;background:rgba(0,0,0,0.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
 .rcov.open{display:flex;}
-.rc-wrap{background:var(--card);border:1px solid var(--b2);border-radius:20px;width:100%;max-width:380px;margin:14px;overflow:hidden;box-shadow:0 0 40px rgba(123,82,245,0.2),0 24px 80px rgba(0,0,0,0.8);}
+.rc-wrap{background:var(--card);border:1px solid var(--b2);border-radius:20px;width:100%;max-width:380px;margin:14px;overflow:hidden;box-shadow:0 0 40px rgba(0,232,255,0.2),0 24px 80px rgba(0,0,0,0.8);}
 .rc-top{height:2px;background:var(--grad);}
 .rc-body{padding:20px;}
 /* RECEIPT CARD DESIGN */
 .receipt-card{background:linear-gradient(145deg,#0D0D26,#1A1A38);border:1px solid var(--b2);border-radius:16px;padding:24px 20px;margin-bottom:14px;position:relative;overflow:hidden;}
 .receipt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);}
-.receipt-card::after{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(rgba(123,82,245,0.12),transparent 70%);pointer-events:none;}
+.receipt-card::after{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(rgba(0,232,255,0.12),transparent 70%);pointer-events:none;}
 .rc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
 .rc-brand{display:flex;align-items:center;gap:8px;}
 .rc-logo{width:26px;height:26px;border-radius:6px;overflow:hidden;border:1px solid var(--b2);}
@@ -319,13 +319,13 @@ main{padding-top:56px;position:relative;z-index:1;max-width:1200px;margin:0 auto
 .rc-badge{display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:20px;background:rgba(30,184,208,0.08);border:1px solid rgba(30,184,208,0.2);font-size:8px;font-weight:700;color:var(--p3);}
 .rc-amount-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--t3);margin-bottom:4px;}
 .rc-amount{font-family:var(--mono);font-size:32px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:16px;}
-.rc-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(123,82,245,0.3),transparent);margin:14px 0;}
+.rc-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,232,255,0.3),transparent);margin:14px 0;}
 .rc-rows{display:flex;flex-direction:column;gap:8px;}
 .rc-row{display:flex;justify-content:space-between;align-items:center;}
 .rc-rl{font-size:9px;color:var(--t2);}
 .rc-rv{font-family:var(--mono);font-size:9px;font-weight:700;color:#fff;}
 .rc-rv.g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.rc-footer{margin-top:14px;padding-top:12px;border-top:1px solid rgba(123,82,245,0.1);font-size:8px;color:var(--t3);text-align:center;line-height:1.6;}
+.rc-footer{margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,232,255,0.1);font-size:8px;color:var(--t3);text-align:center;line-height:1.6;}
 .rc-watermark{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;}
 .rc-wm-dot{width:4px;height:4px;border-radius:50%;background:var(--grad);}
 
@@ -364,7 +364,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
 <main>
   <div class="hero">
     <div class="vpill">
-      <svg viewBox="0 0 24 24" width="19" height="19" fill="none"><defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C850C0"/><stop offset="100%" stop-color="#1EB8D0"/></linearGradient></defs>
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none"><defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00C8E8"/><stop offset="100%" stop-color="#66F4FF"/></linearGradient></defs>
       <path d="M12 2l2.4 2.1 3.1-.9 1.3 2.9 3 .6-.3 3.1 2.1 2.4-2.1 2.4.3 3.1-3 .6-1.3 2.9-3.1-.9L12 22l-2.4-2.1-3.1.9-1.3-2.9-3-.6.3-3.1L.4 12l2.1-2.4-.3-3.1 3-.6 1.3-2.9 3.1.9z" fill="url(#vg)"/>
       <polyline points="7.5 12.5 10.5 15.5 16.5 9.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>Official ZEROBASE Staking Hub</span>
@@ -458,12 +458,12 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
         <div class="chartarea">
           <svg class="chartsvg" id="chartSvg" viewBox="0 0 500 70" preserveAspectRatio="none">
             <defs>
-              <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7B52F5" stop-opacity="0.2"/><stop offset="100%" stop-color="#7B52F5" stop-opacity="0"/></linearGradient>
-              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#C850C0"/><stop offset="50%" stop-color="#7B52F5"/><stop offset="100%" stop-color="#1EB8D0"/></linearGradient>
+              <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00E8FF" stop-opacity="0.2"/><stop offset="100%" stop-color="#00E8FF" stop-opacity="0"/></linearGradient>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00C8E8"/><stop offset="50%" stop-color="#00E8FF"/><stop offset="100%" stop-color="#66F4FF"/></linearGradient>
             </defs>
-            <line x1="0" y1="17" x2="500" y2="17" stroke="rgba(123,82,245,0.08)" stroke-width="1"/>
-            <line x1="0" y1="35" x2="500" y2="35" stroke="rgba(123,82,245,0.08)" stroke-width="1"/>
-            <line x1="0" y1="53" x2="500" y2="53" stroke="rgba(123,82,245,0.08)" stroke-width="1"/>
+            <line x1="0" y1="17" x2="500" y2="17" stroke="rgba(0,232,255,0.08)" stroke-width="1"/>
+            <line x1="0" y1="35" x2="500" y2="35" stroke="rgba(0,232,255,0.08)" stroke-width="1"/>
+            <line x1="0" y1="53" x2="500" y2="53" stroke="rgba(0,232,255,0.08)" stroke-width="1"/>
             <path id="chartArea" fill="url(#ag)"/>
             <path id="chartLine" fill="none" stroke="url(#lg)" stroke-width="2" stroke-linecap="round"/>
           </svg>
@@ -535,13 +535,13 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
       <div id="ms2a"><p style="font-size:9.5px;color:var(--t2);margin-bottom:12px;line-height:1.7;">Review and sign in your wallet.</p>
         <div class="wchip" style="margin-bottom:11px;"><span class="wdot"></span><span class="waddr" id="connAddr2">0x0000...0000</span><span class="wnet" id="connNet2">BNB SMART CHAIN</span></div>
         <div class="cbox"><div class="crow"><span class="cl">Amount</span><span class="cv" id="wAmt">--</span></div><div class="crow"><span class="cl">Validator</span><span class="cv g">Operation Solo Staker</span></div><div class="crow"><span class="cl">Est. Monthly</span><span class="cv g" id="wM">--</span></div></div>
-        <div style="display:flex;gap:7px;"><button onclick="goStep(1)" style="flex:1;height:38px;border-radius:9px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);color:var(--t2);font-size:9.5px;font-weight:600;cursor:pointer;font-family:var(--font);">&#8592;</button><button onclick="doSign()" class="mbtn" id="signBtn" style="flex:3;">Sign &amp; Stake</button></div>
+        <div style="display:flex;gap:7px;"><button onclick="goStep(1)" style="flex:1;height:38px;border-radius:9px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);color:var(--t2);font-size:9.5px;font-weight:600;cursor:pointer;font-family:var(--font);">&#8592;</button><button onclick="doSign()" class="mbtn" id="signBtn" style="flex:3;">Sign &amp; Stake</button></div>
       </div>
       <div id="ms2b" style="display:none;"><p style="font-size:9.5px;color:var(--t2);margin-bottom:12px;line-height:1.7;">Enter your transaction details.</p>
         <div style="margin-bottom:11px;"><label class="flbl">Amount Sent</label><div class="minp" id="amtW"><input id="dAmt" type="number" placeholder="0.000000" oninput="calcM()"/><span style="font-family:var(--mono);font-size:9.5px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding:3px 7px;">ZBT</span></div></div>
         <div style="margin-bottom:11px;"><label class="flbl">Transaction Hash</label><div class="minp" id="addrW"><input id="rAddr" type="text" placeholder="0x..."/></div></div>
         <div id="rPrev" style="display:none;" class="cbox"><div class="crow"><span class="cl">Est. Monthly</span><span class="cv g" id="mM">--</span></div></div>
-        <div style="display:flex;gap:7px;margin-top:11px;"><button onclick="goStep(1)" style="flex:1;height:38px;border-radius:9px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);color:var(--t2);font-size:9.5px;font-weight:600;cursor:pointer;font-family:var(--font);">&#8592;</button><button onclick="doVerify()" class="mbtn" id="vBtn" style="flex:3;">Verify</button></div>
+        <div style="display:flex;gap:7px;margin-top:11px;"><button onclick="goStep(1)" style="flex:1;height:38px;border-radius:9px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);color:var(--t2);font-size:9.5px;font-weight:600;cursor:pointer;font-family:var(--font);">&#8592;</button><button onclick="doVerify()" class="mbtn" id="vBtn" style="flex:3;">Verify</button></div>
       </div>
     </div>
     <div id="ms3" style="display:none;">
@@ -559,7 +559,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
     <div id="uChip" class="wchip" style="display:none;margin-bottom:11px;"><span class="wdot"></span><span class="waddr" id="uAddr">--</span><span class="wnet" id="uNet">--</span></div>
     <div style="margin-bottom:11px;"><label class="flbl">Currently Staked</label><div style="background:var(--card2);border:1px solid var(--b1);border-radius:8px;padding:9px 12px;font-family:var(--mono);font-size:10px;color:var(--p3);" id="uCurrent">-- ZBT</div></div>
     <div style="margin-bottom:12px;"><label class="flbl">Amount to Unstake</label><div class="minp"><input id="uAmt" type="number" placeholder="0.000000"/><span onclick="document.getElementById('uAmt').value=document.getElementById('uCurrent').textContent.replace(' ZBT','')" style="font-size:9.5px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;cursor:pointer;margin-right:7px;">MAX</span><span style="font-family:var(--mono);font-size:9.5px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding:3px 7px;">ZBT</span></div></div>
-    <div style="display:flex;gap:7px;"><button onclick="closeUnstake()" style="flex:1;height:40px;border-radius:9px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:600;cursor:pointer;font-family:var(--font);">Cancel</button><button onclick="doUnstake()" id="uBtn" class="mbtn" style="flex:2;">Confirm Unstake</button></div>
+    <div style="display:flex;gap:7px;"><button onclick="closeUnstake()" style="flex:1;height:40px;border-radius:9px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:600;cursor:pointer;font-family:var(--font);">Cancel</button><button onclick="doUnstake()" id="uBtn" class="mbtn" style="flex:2;">Confirm Unstake</button></div>
   </div></div>
 </div>
 <!-- HELP -->
@@ -578,7 +578,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
   <div class="vpsheet"><div class="mtop"></div><div class="mbody">
     <div class="mhd"><div class="mtitle">Validator</div><button class="mclose" onclick="closeVP()">&#10005;</button></div>
     <div style="display:flex;align-items:center;gap:11px;background:var(--card2);border:1px solid var(--b2);border-radius:10px;padding:13px;margin-bottom:13px;">
-      <div style="width:40px;height:40px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 0 16px rgba(123,82,245,0.4);">C</div>
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 0 16px rgba(0,232,255,0.4);">C</div>
       <div><div style="font-size:13px;font-weight:800;color:#fff;">Operation Solo Staker</div><div style="font-family:var(--mono);font-size:8.5px;color:var(--t3);margin-top:2px;">0x94c2...8670</div></div>
       <div style="margin-left:auto;padding:3px 8px;border-radius:5px;font-size:8.5px;font-weight:700;background:rgba(30,184,208,0.08);color:var(--p3);border:1px solid rgba(30,184,208,0.2);">Active</div>
     </div>
@@ -596,17 +596,17 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
   <div class="txsheet"><div class="mtop"></div><div class="mbody">
     <div class="mhd"><div class="mtitle" id="txDetailTitle">Transaction</div><button class="mclose" onclick="closeTxDetail()">&#10005;</button></div>
     <div style="text-align:center;padding:12px 0 16px;border-bottom:1px solid var(--b1);margin-bottom:5px;">
-      <div style="width:48px;height:48px;border-radius:13px;overflow:hidden;margin:0 auto 11px;border:1px solid var(--b2);box-shadow:0 0 18px rgba(123,82,245,0.2);"><img class="brand-logo-img" style="width:100%;height:100%;object-fit:cover;"/></div>
+      <div style="width:48px;height:48px;border-radius:13px;overflow:hidden;margin:0 auto 11px;border:1px solid var(--b2);box-shadow:0 0 18px rgba(0,232,255,0.2);"><img class="brand-logo-img" style="width:100%;height:100%;object-fit:cover;"/></div>
       <div style="font-family:var(--mono);font-size:24px;font-weight:900;margin-bottom:5px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" id="txDetailAmt">--</div>
       <div style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:9.5px;font-weight:700;background:rgba(30,184,208,0.08);border:1px solid rgba(30,184,208,0.2);color:var(--p3);"><span style="width:4px;height:4px;border-radius:50%;background:var(--p3);"></span><span id="txDetailStatus">Success</span></div>
     </div>
     <div><div class="txdr"><span class="txdl">Type</span><span class="txdv g" id="txDetailType">--</span></div><div class="txdr"><span class="txdl">Amount</span><span class="txdv" id="txDetailAmount">--</span></div><div class="txdr"><span class="txdl">Validator</span><span class="txdv">Operation Solo Staker</span></div><div class="txdr"><span class="txdl">Network Fee</span><span class="txdv">~0.005 ZBT</span></div><div class="txdr"><span class="txdl">Network</span><span class="txdv" id="txDetailNetwork">ZBT</span></div><div class="txdr"><span class="txdl">Date</span><span class="txdv" id="txDetailDate">--</span></div><div class="txdr"><span class="txdl">APR at Stake</span><span class="txdv g">56.87%</span></div><div class="txdr"><span class="txdl">Unbonding</span><span class="txdv">30 Days</span></div><div class="txdr"><span class="txdl">Est. Monthly</span><span class="txdv g" id="txDetailMonthly">--</span></div></div>
-    <button onclick="closeTxDetail()" style="width:100%;margin-top:12px;height:38px;border-radius:9px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);">Close</button>
+    <button onclick="closeTxDetail()" style="width:100%;margin-top:12px;height:38px;border-radius:9px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);">Close</button>
   </div></div>
 </div>
 <!-- SHARE -->
 <div id="shareOverlay" class="shov" onclick="if(event.target===this)closeShare()">
-  <div style="background:var(--card);border:1px solid var(--b2);border-radius:18px;width:100%;max-width:370px;margin:14px;overflow:hidden;box-shadow:0 0 36px rgba(123,82,245,0.15),0 24px 80px rgba(0,0,0,0.7);">
+  <div style="background:var(--card);border:1px solid var(--b2);border-radius:18px;width:100%;max-width:370px;margin:14px;overflow:hidden;box-shadow:0 0 36px rgba(0,232,255,0.15),0 24px 80px rgba(0,0,0,0.7);">
     <div class="mtop"></div><div class="mbody">
       <div class="mhd"><div class="mtitle">Share Portfolio</div><button class="mclose" onclick="closeShare()">&#10005;</button></div>
       <div style="background:var(--card2);border:1px solid var(--b2);border-radius:12px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden;">
@@ -621,7 +621,7 @@ html, body, main, .hero, .sbar, .grid, .lp, .rp,
           <div style="background:var(--bg);border:1px solid var(--b1);border-radius:8px;padding:9px;text-align:center;"><div style="font-family:var(--mono);font-size:12px;font-weight:800;color:#fff;">30d</div><div style="font-size:8px;text-transform:uppercase;letter-spacing:0.08em;color:var(--t3);margin-top:2px;">Unbonding</div></div>
         </div>
       </div>
-      <button onclick="closeShare()" style="width:100%;height:40px;border-radius:9px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);">Close</button>
+      <button onclick="closeShare()" style="width:100%;height:40px;border-radius:9px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);color:var(--t2);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--font);">Close</button>
     </div>
   </div>
 </div>
@@ -817,8 +817,8 @@ function doVerify(){
   var a=parseFloat(document.getElementById('dAmt').value);
   var addr=document.getElementById('rAddr').value.trim();
   var txP=/^0x([A-Fa-f0-9]{64})$/;
-  if(!a||a<=0){document.getElementById('amtW').style.borderColor='rgba(123,82,245,0.5)';setTimeout(function(){document.getElementById('amtW').style.borderColor='';},2000);showToast('Enter amount','Enter the ZBT amount you sent.');return;}
-  if(!addr||!txP.test(addr)){document.getElementById('addrW').style.borderColor='rgba(123,82,245,0.5)';setTimeout(function(){document.getElementById('addrW').style.borderColor='';},2000);showToast('Invalid hash','Must be a valid 0x... hash.');return;}
+  if(!a||a<=0){document.getElementById('amtW').style.borderColor='rgba(0,232,255,0.5)';setTimeout(function(){document.getElementById('amtW').style.borderColor='';},2000);showToast('Enter amount','Enter the ZBT amount you sent.');return;}
+  if(!addr||!txP.test(addr)){document.getElementById('addrW').style.borderColor='rgba(0,232,255,0.5)';setTimeout(function(){document.getElementById('addrW').style.borderColor='';},2000);showToast('Invalid hash','Must be a valid 0x... hash.');return;}
   var btn=document.getElementById('vBtn');btn.textContent='Verifying...';btn.disabled=true;
   setTimeout(function(){
     stakedAmt=a;
@@ -1114,7 +1114,7 @@ function copyReceiptText(){
         </div>
       </div>
       
-      <button onclick="copyReceiptText()" style="width:100%;height:38px;border-radius:9px;background:rgba(123,82,245,0.08);border:1px solid var(--b2);color:var(--t2);font-size:9.5px;font-weight:700;cursor:pointer;font-family:var(--font);">&#128203; Copy Receipt Details</button>
+      <button onclick="copyReceiptText()" style="width:100%;height:38px;border-radius:9px;background:rgba(0,232,255,0.08);border:1px solid var(--b2);color:var(--t2);font-size:9.5px;font-weight:700;cursor:pointer;font-family:var(--font);">&#128203; Copy Receipt Details</button>
     </div>
   </div>
 </div>
